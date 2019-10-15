@@ -5,13 +5,12 @@ console.log(tamanhoFrase);
 tamanhoFrase.text(numPalavras);
 
 var campo = $(".campo-digitacao")
-campo.on("click",function(){
+campo.on("input",function(){
   var conteudo = (campo.val());
 
-  var qtdPalavras = conteudo.split(" ").length;
+  var qtdPalavras = conteudo.split(/\S+/).length - 1;
   $("#contador-palavras").text(qtdPalavras);
 
   var qtdCaracteres = conteudo.length;
   $("#contador-caracteres").text(qtdCaracteres);
-  
 });
