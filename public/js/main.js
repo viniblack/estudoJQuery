@@ -1,3 +1,6 @@
 var frase = $(".frase").text();
-var tamanhoFrase = frase.split(" ").length;
+var numPalavras = frase.split(" ").length;
+var tamanhoFrase = $("#tamanho-frase");
 console.log(tamanhoFrase);
+
+tamanhoFrase.text(numPalavras);
