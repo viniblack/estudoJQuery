@@ -16,6 +16,10 @@
     vertical-align: middle;
 }
 
+.campo-digitacao{
+    border: 3px solid black;
+}
+
 .borda-verde {
     border: 3px solid green;
 }
