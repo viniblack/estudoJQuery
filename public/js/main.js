@@ -65,9 +65,16 @@ function inicializaMarcadores() {
 }
 
 function inserePlacar(){
-    var tabela = $(".placar").find("tbody");
-    console.log(tabela);
+    var corpoTabela = $(".placar").find("tbody");
+    var usuario = "Vinicius";
+    var numbPalavras = $("#contador-palavras").text();
     
+    var linha = "<tr>" +
+                    "<td>"+ usuario +"</td>"+
+                    "<td>"+ numbPalavras +"</td>"+
+                "</tr>";
+
+    corpoTabela.prepend(linha);
 }
 
 function reiniciaJogo() {
