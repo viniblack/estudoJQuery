@@ -10,6 +10,17 @@ function inserePlacar(){
   linha.find(".botao-remover").click(removeLinha);
 
   corpoTabela.prepend(linha);
+  $(".placar").slideDown(500);
+  scrollPlacar();
+}
+
+function scrollPlacar(){
+ var posicaoPlacar = $(".placar").offset().top;
+ console.log(posicaoPlacar);
+ 
+ $("body").animate({
+   scrollTop: posicaoPlacar+"px"
+ },1000);
 }
 
 function novaLinha(usuario,palavras){
