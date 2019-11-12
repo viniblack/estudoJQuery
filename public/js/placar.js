@@ -6,7 +6,6 @@ function inserePlacar(){
   var usuario = "Vinicius";
   var numbPalavras = $("#contador-palavras").text();
 
-
   var linha = novaLinha(usuario,numbPalavras);
   linha.find(".botao-remover").click(removeLinha);
 
@@ -58,7 +57,26 @@ function mostraPlacar(){
   $(".placar").stop().slideToggle(700);
 }
 
-function sincronizaPlacar(){
-  
-  
+function sincronizaPlacar() {
+  var placar = [];
+  var linhas = $("tbody>tr");
+  linhas.each(function(){
+    var usuario = $(this).find("td:nth-child(1)").text();
+    var palavras = $(this).find("td:nth-child(2)").text();
+
+    var score = {
+      usuario: usuario,
+      pontos: palavras
+    };
+
+    placar.push(score);
+  });
+
+  var dados = {
+    placar: placar
+  };
+
+  $.post("http://localhost:3000/placar",dados,function(){
+    console.log("Salvou o placar no servidor");
+  })
 }
