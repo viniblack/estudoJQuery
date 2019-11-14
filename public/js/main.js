@@ -18,6 +18,8 @@ $(function(){
         trigger: "custom"
     });
 
+    $('.tooltip2').tooltipster();
+
 });
 
 function atualizaTempoInicial(tempo){
